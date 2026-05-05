@@ -1,0 +1,312 @@
+object FormMain: TFormMain
+  Left = 0
+  Top = 0
+  Caption = 'Working with On Premises hosted  LLMs '
+  ClientHeight = 856
+  ClientWidth = 1502
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  DesignerMasterStyle = 0
+  object Layout1: TLayout
+    Align = Top
+    Size.Width = 1502.000000000000000000
+    Size.Height = 145.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object ComboBoxModel: TComboBox
+      Position.X = 40.000000000000000000
+      Position.Y = 40.000000000000000000
+      Size.Width = 249.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      OnChange = ComboBoxModelChange
+    end
+    object Edit_Username: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 1
+      Position.X = 360.000000000000000000
+      Position.Y = 40.000000000000000000
+      Size.Width = 177.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      OnChange = Edit_UsernameChange
+    end
+    object EditWinPassword: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 2
+      Password = True
+      Position.X = 592.000000000000000000
+      Position.Y = 40.000000000000000000
+      Size.Width = 177.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      OnChange = EditWinPasswordChange
+    end
+    object ButtonTestConnection: TButton
+      Position.X = 985.000000000000000000
+      Position.Y = 15.000000000000000000
+      Size.Width = 146.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      Text = 'Test AIConnection'
+      OnClick = ButtonTestConnectionClick
+    end
+    object ButtonLoadConfig: TButton
+      Position.X = 1315.000000000000000000
+      Position.Y = 15.000000000000000000
+      Size.Width = 146.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      Text = 'Load AIConfig File'
+      OnClick = ButtonLoadConfigClick
+    end
+    object CheckBoxdebug: TCheckBox
+      Position.X = 1307.000000000000000000
+      Position.Y = 101.000000000000000000
+      TabOrder = 5
+      Text = 'Debug !'
+    end
+    object Button_FetchModels: TButton
+      Position.X = 1153.000000000000000000
+      Position.Y = 15.000000000000000000
+      Size.Width = 146.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 6
+      Text = 'Fetch Models'
+      OnClick = Button_FetchModelsClick
+    end
+    object Label_Username: TLabel
+      Position.X = 360.000000000000000000
+      Position.Y = 15.000000000000000000
+      Text = 'Username'
+      TabOrder = 7
+    end
+    object Label_Winpassword: TLabel
+      Position.X = 592.000000000000000000
+      Position.Y = 15.000000000000000000
+      Text = 'Window password'
+      TabOrder = 8
+    end
+    object LabelModelName: TLabel
+      Position.X = 40.000000000000000000
+      Position.Y = 15.000000000000000000
+      Text = 'ModelName'
+      TabOrder = 9
+    end
+    object EditAPIKey: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 10
+      Position.X = 360.000000000000000000
+      Position.Y = 94.000000000000000000
+      Size.Width = 409.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object ButtonGetAPIKey: TButton
+      Position.X = 985.000000000000000000
+      Position.Y = 80.000000000000000000
+      Size.Width = 146.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 11
+      Text = 'Get APIKey'
+      OnClick = ButtonGetAPIKeyClick
+    end
+    object GroupBoxAuthenticationMode: TGroupBox
+      Position.X = 817.000000000000000000
+      Position.Y = 15.000000000000000000
+      Size.Width = 160.000000000000000000
+      Size.Height = 122.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Auth  Mode'
+      TabOrder = 12
+      object RadioButton_Winlogin: TRadioButton
+        Position.X = 24.000000000000000000
+        Position.Y = 28.000000000000000000
+        TabOrder = 38
+        Text = ' Login Credential'
+      end
+      object RadioButton_URL: TRadioButton
+        Position.X = 24.000000000000000000
+        Position.Y = 55.000000000000000000
+        TabOrder = 39
+        Text = 'URL'
+      end
+      object RadioButton_CopyAndPaste: TRadioButton
+        Position.X = 24.000000000000000000
+        Position.Y = 82.000000000000000000
+        TabOrder = 40
+        Text = 'Copy  & Paste'
+      end
+    end
+    object LabelAPIKey: TLabel
+      Position.X = 360.000000000000000000
+      Position.Y = 70.000000000000000000
+      Size.Width = 185.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'APIKey'
+      TabOrder = 13
+    end
+    object EditURL: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 14
+      Position.X = 40.000000000000000000
+      Position.Y = 94.000000000000000000
+      Size.Width = 249.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object LabelURL: TLabel
+      Position.X = 40.000000000000000000
+      Position.Y = 70.000000000000000000
+      Text = 'URL'
+      TabOrder = 15
+    end
+  end
+  object Panel1: TPanel
+    Align = Bottom
+    Position.Y = 818.000000000000000000
+    Size.Width = 1502.000000000000000000
+    Size.Height = 38.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object LabelStatusbar: TLabel
+      Align = Client
+      Size.Width = 1502.000000000000000000
+      Size.Height = 38.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'LabelStatusbar'
+      TabOrder = 0
+    end
+  end
+  object OpenDialog: TOpenDialog
+    Left = 736
+    Top = 184
+  end
+  object Layout2: TLayout
+    Align = Left
+    Position.Y = 145.000000000000000000
+    Size.Width = 145.000000000000000000
+    Size.Height = 673.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    object ButtonSendQuery: TButton
+      Position.X = 8.000000000000000000
+      Position.Y = 31.000000000000000000
+      Size.Width = 121.000000000000000000
+      Size.Height = 90.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'Send Query'
+      OnClick = ButtonSendQueryClick
+    end
+    object Button_EmbeddingsT1: TButton
+      Position.X = 8.000000000000000000
+      Position.Y = 129.000000000000000000
+      Size.Width = 121.000000000000000000
+      Size.Height = 64.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 10
+      Text = 'Embeddings T1'
+      OnClick = Button_EmbeddingsT1Click
+    end
+    object ButtonClear: TButton
+      Position.X = 8.000000000000000000
+      Position.Y = 576.000000000000000000
+      Size.Width = 121.000000000000000000
+      Size.Height = 73.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      Text = 'Clear'
+      OnClick = ButtonClearClick
+    end
+    object Button_EmbeddingsT2: TButton
+      Position.X = 8.000000000000000000
+      Position.Y = 201.000000000000000000
+      Size.Width = 121.000000000000000000
+      Size.Height = 64.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 11
+      Text = 'Embeddings T2'
+      OnClick = Button_EmbeddingsT2Click
+    end
+    object Button_EmbeddingsT3: TButton
+      Position.X = 8.000000000000000000
+      Position.Y = 273.000000000000000000
+      Size.Width = 121.000000000000000000
+      Size.Height = 64.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 12
+      Text = 'Embeddings T3'
+      OnClick = Button_EmbeddingsT3Click
+    end
+    object Button_EmbeddingsT4: TButton
+      Position.X = 8.000000000000000000
+      Position.Y = 345.000000000000000000
+      Size.Width = 121.000000000000000000
+      Size.Height = 64.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 13
+      Text = 'Embeddings T4'
+      OnClick = Button_EmbeddingsT4Click
+    end
+    object Button_EmbeddingsT5: TButton
+      Position.X = 8.000000000000000000
+      Position.Y = 425.000000000000000000
+      Size.Width = 121.000000000000000000
+      Size.Height = 64.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 14
+      Text = 'Embeddings T5'
+      OnClick = Button_EmbeddingsT5Click
+    end
+    object Button_EmbeddingsT6: TButton
+      Position.X = 8.000000000000000000
+      Position.Y = 497.000000000000000000
+      Size.Width = 121.000000000000000000
+      Size.Height = 64.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 15
+      Text = 'Embeddings T6'
+      OnClick = Button_EmbeddingsT6Click
+    end
+  end
+  object Layout3: TLayout
+    Align = Client
+    Size.Width = 1357.000000000000000000
+    Size.Height = 673.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    object MemoResponse: TMemo
+      Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+      DataDetectorTypes = []
+      Align = Client
+      Size.Width = 1357.000000000000000000
+      Size.Height = 623.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Viewport.Width = 1353.000000000000000000
+      Viewport.Height = 619.000000000000000000
+    end
+    object MemoQuestion: TMemo
+      Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+      DataDetectorTypes = []
+      Align = Bottom
+      Position.Y = 623.000000000000000000
+      Size.Width = 1357.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      Viewport.Width = 1353.000000000000000000
+      Viewport.Height = 46.000000000000000000
+    end
+  end
+end
